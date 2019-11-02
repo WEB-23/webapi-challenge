@@ -22,6 +22,7 @@ router.get('/', (req, res) => {
 // get specific projects by their id
 router.get('/:id', (req, res) => {
 	const { id } = req.params;
+
 	Project.get(id).then((project) => {
 		if (project) {
 			res.status(200).json(project);
